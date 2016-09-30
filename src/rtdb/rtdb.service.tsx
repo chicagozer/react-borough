@@ -24,7 +24,6 @@ export class RtdbService {
 
             this.socket.on('90e40254-d57c-4ce5-88b5-20034c9511ec',
                 (data: any) => {
-                    console.log('new borough data');
                     observer.next(data.map((i: any) => new Borough(i[0], i[1].fvTotal, i[1].count)));
                 });
 
