@@ -12,7 +12,7 @@
     "src/actions/index.tsx",
     "src/components/borough.tsx",
     "src/components/boroughs.tsx",
-
+    "src/rtdb/rtdb.service.tsx",
     "src/containers/App.tsx",
     "src/index.tsx",
     "src/reducers/index.tsx"

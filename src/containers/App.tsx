@@ -1,25 +1,30 @@
 import * as React from 'react'
 import {connect} from 'react-redux'
 import {RootState} from '../reducers'
-import { fetchBoroughs } from '../actions'
+import {fetchBoroughs} from '../actions'
 import Boroughs from '../components/boroughs'
-import { Borough } from '../components/borough'
+import {Borough} from '../components/borough'
+import {RtdbService} from "../rtdb/rtdb.service";
 
 interface AppProps {
     boroughs: Borough[],
-  dispatch?: Function;
+    dispatch?: Function;
 }
 
 class App extends React.Component<AppProps,{}> {
 
+    rtdb: RtdbService;
+
     constructor(props: AppProps) {
         super(props);
+
+        this.rtdb = new  RtdbService();
 
     }
 
 
     componentDidMount() {
-        this.props.dispatch(fetchBoroughs())
+        this.props.dispatch(fetchBoroughs(this.rtdb))
     }
 
 
@@ -27,7 +32,7 @@ class App extends React.Component<AppProps,{}> {
 
         return (
             <div>
-            <Boroughs boroughs={this.props.boroughs}/>
+                <Boroughs boroughs={this.props.boroughs}/>
             </div>
         )
     }
@@ -35,7 +40,7 @@ class App extends React.Component<AppProps,{}> {
 
 function mapStateToProps(state: RootState): AppProps {
 
-  return {
+    return {
         boroughs: state.boroughs || []
     }
 }
