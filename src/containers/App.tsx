@@ -4,6 +4,7 @@ import {RootState} from '../reducers'
 import {fetchBoroughs} from '../actions'
 import Boroughs from '../components/boroughs'
 import {Borough} from '../components/borough'
+import {RtdbService} from "../rtdb/rtdb.service";
 
 interface AppProps {
     boroughs: Borough[],
@@ -12,14 +13,18 @@ interface AppProps {
 
 class App extends React.Component<AppProps,{}> {
 
+    rtdb: RtdbService;
+
     constructor(props: AppProps) {
         super(props);
+
+        this.rtdb = new  RtdbService();
 
     }
 
 
     componentDidMount() {
-        this.props.dispatch(fetchBoroughs())
+        this.props.dispatch(fetchBoroughs(this.rtdb))
     }
 
 

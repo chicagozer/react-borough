@@ -25,9 +25,9 @@ function requestBoroughs(): Action {
     };
 }
 
-export function fetchBoroughs(): Function {
+export function fetchBoroughs(rtdb : RtdbService): Function {
 
-    var rtdb  = new RtdbService();
+
 
     return (dispatch: Function) => {
         dispatch(requestBoroughs());
