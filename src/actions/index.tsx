@@ -1,5 +1,4 @@
 import { RtdbService } from '../rtdb/rtdb.service';
-import {RootState} from '../reducers/index';
 import { Borough } from '../components/borough';
 
 export const RECEIVE_BOROUGHS = 'RECEIVE_BOROUGHS';
@@ -31,7 +30,7 @@ export function fetchBoroughs(): Function {
     var rtdb  = new RtdbService();
 
     return (dispatch: Function) => {
-        dispatch(requestBoroughs())
+        dispatch(requestBoroughs());
         rtdb.getBoroughs().subscribe( (boroughs:Borough[]) => dispatch(receiveBoroughs(boroughs) ));
     }
 }
