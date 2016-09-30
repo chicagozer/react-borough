@@ -2224,7 +2224,7 @@
 	        key: "render",
 	        value: function render() {
 	            return React.createElement("div", null, React.createElement("table", { className: "table table-striped" }, React.createElement("thead", null, React.createElement("tr", null, React.createElement("td", null, "Name"), React.createElement("td", null, "Valuation"), React.createElement("td", null, "Count"))), React.createElement("tbody", null, this.props.boroughs.map(function (borough) {
-	                return React.createElement("tr", null, React.createElement("td", null, " ", borough.name, " "), React.createElement("td", null, " ", borough.valuation, " "), React.createElement("td", null, " ", borough.count));
+	                return React.createElement("tr", { key: borough.name }, React.createElement("td", null, " ", borough.name, " "), React.createElement("td", null, " ", borough.valuation, " "), React.createElement("td", null, " ", borough.count));
 	            }))));
 	        }
 	    }]);
@@ -2264,7 +2264,6 @@
 	        });
 	        this.boroughs = new Rx_1.Observable(function (observer) {
 	            _this.socket.on('90e40254-d57c-4ce5-88b5-20034c9511ec', function (data) {
-	                console.log('new borough data');
 	                observer.next(data.map(function (i) {
 	                    return new borough_1.Borough(i[0], i[1].fvTotal, i[1].count);
 	                }));
