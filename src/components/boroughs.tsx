@@ -27,7 +27,7 @@ class Boroughs extends React.Component< BoroughsProps, {} > {
                     <tbody>
 
                         { this.props.boroughs.map(borough =>
-                            <tr >
+                            <tr key={borough.name}>
                                 <td> { borough.name } </td>
                                 <td> { borough.valuation } </td>
                                 <td> { borough.count }</td>
