@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { Borough } from './borough';
+//import * as Config  from 'config';
+var Config = require('config');
 
 interface BoroughsProps {
     boroughs: Borough[];
@@ -16,6 +18,9 @@ class Boroughs extends React.Component< BoroughsProps, {} > {
 
         return (
             <div>
+                <div className="page-header">
+                    <h1>React Borough List<small>[{Config.version}]</small></h1>
+                </div>
                 <table className="table table-striped">
                     <thead>
                     <tr>
