@@ -1,25 +1,20 @@
-import {
-    RECEIVE_BOROUGHS, Action
-} from '../actions'
-import { Borough } from '../components/borough';
+import {IAction, RECEIVE_BOROUGHS} from "../actions";
+import {Borough} from "../components/borough";
 
-
-export interface RootState {
+export interface IRootState {
     boroughs: Borough[];
 
 }
 
-
-function reduceBoroughs(state: RootState = { boroughs: []}, action: Action) {
+function reduceBoroughs(state: IRootState = {boroughs: []}, action: IAction) {
     switch (action.type) {
         case RECEIVE_BOROUGHS:
             return Object.assign({}, state, {
-                boroughs: action.boroughs
-            })
+                boroughs: action.boroughs,
+            });
         default:
-            return state
+            return state;
     }
 }
 
-
-export default reduceBoroughs
+export default reduceBoroughs;

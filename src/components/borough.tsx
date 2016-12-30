@@ -1,9 +1,8 @@
-
 export class Borough {
 
-    valuation: number;
-    name: string;
-    count: number;
+    public valuation: number;
+    public name: string;
+    public count: number;
 
     constructor(name: string, valuation: number, count: number) {
         this.name = name;
