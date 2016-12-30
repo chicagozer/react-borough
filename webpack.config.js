@@ -17,6 +17,7 @@ module.exports = {
 
     module: {
         loaders: [
+
             // All files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'.
             { test: /\.tsx?$/, loader: "babel-loader?presets[]=es2015!ts-loader" }
         ],

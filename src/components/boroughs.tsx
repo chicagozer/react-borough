@@ -2,7 +2,6 @@ import * as React from 'react';
 import { Borough } from './borough';
 //import * as Config  from 'config';
 var Config = require('config');
-
 interface BoroughsProps {
     boroughs: Borough[];
 }
