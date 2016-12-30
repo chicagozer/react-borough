@@ -54,6 +54,8 @@
 	var redux_thunk_1 = __webpack_require__(48);
 	var reducers_1 = __webpack_require__(49);
 	var App_1 = __webpack_require__(51);
+	var pjson = __webpack_require__(446);
+	//console.dir(pjson);
 	var middleware = [redux_thunk_1.default, createLogger()];
 	// this is a bit hacky - not sure how to cast (<any>window) without JSX getting upset
 	var store = redux_1.createStore(reducers_1.default, redux_1.compose(redux_1.applyMiddleware.apply(redux_1, middleware), window.devToolsExtension ? window.devToolsExtension() : function (f) {
@@ -3515,7 +3517,7 @@
 /* 53 */
 /***/ function(module, exports) {
 
-	module.exports = {"name":"react-ts","version":"1.0.0","description":"","main":"./dist/bundle.js","scripts":{"test":"echo \"Error: no test specified\" && exit 1","postinstall":"typings install","start":"webpack-dev-server --inline --hot"},"author":"","license":"ISC","dependencies":{"@types/node":"^6.0.54","@types/react":"^0.14.55","@types/react-dom":"^0.14.19","@types/react-redux":"^4.4.35","@types/socket.io-client":"^1.4.29","@types/whatwg-fetch":"0.0.33","@types/whatwg-streams":"0.0.2","install":"^0.8.4","npm":"^4.1.1","react":"^15.4.1","react-dom":"^15.4.1","react-redux":"^5.0.1","redux":"^3.6.0","redux-logger":"^2.7.4","redux-thunk":"^2.1.0","rxjs":"^5.0.2","socket.io-client":"^1.7.2","typescript":"^2.1.4","webpack":"^1.14.0","webpack-dev-server":"^1.16.2","whatwg-fetch":"^2.0.1","whatwg-streams":"^0.1.1"},"devDependencies":{"babel-core":"^6.21.0","babel-loader":"^6.2.10","babel-preset-es2015":"^6.18.0","source-map-loader":"^0.1.5","ts-loader":"^1.3.3","tslint":"^4.2.0"}};
+	module.exports = {"name":"react-ts","version":"1.0.1","description":"","main":"./dist/bundle.js","scripts":{"test":"echo \"Error: no test specified\" && exit 1","postinstall":"typings install","start":"webpack-dev-server --inline --hot"},"author":"","license":"ISC","dependencies":{"@types/node":"^6.0.54","@types/react":"^0.14.55","@types/react-dom":"^0.14.19","@types/react-redux":"^4.4.35","@types/socket.io-client":"^1.4.29","@types/whatwg-fetch":"0.0.33","@types/whatwg-streams":"0.0.2","install":"^0.8.4","json-loader":"^0.5.4","npm":"^4.1.1","react":"^15.4.1","react-dom":"^15.4.1","react-redux":"^5.0.1","redux":"^3.6.0","redux-logger":"^2.7.4","redux-thunk":"^2.1.0","rxjs":"^5.0.2","socket.io-client":"^1.7.2","typescript":"^2.1.4","webpack":"^1.14.0","webpack-dev-server":"^1.16.2","whatwg-fetch":"^2.0.1","whatwg-streams":"^0.1.1"},"devDependencies":{"babel-core":"^6.21.0","babel-loader":"^6.2.10","babel-preset-es2015":"^6.18.0","source-map-loader":"^0.1.5","ts-loader":"^1.3.3","tslint":"^4.2.0"}};
 
 /***/ },
 /* 54 */
@@ -29936,6 +29938,57 @@
 	};
 	
 	exports.Borough = Borough;
+
+/***/ },
+/* 446 */
+/***/ function(module, exports) {
+
+	module.exports = {
+		"name": "react-ts",
+		"version": "1.0.1",
+		"description": "",
+		"main": "./dist/bundle.js",
+		"scripts": {
+			"test": "echo \"Error: no test specified\" && exit 1",
+			"postinstall": "typings install",
+			"start": "webpack-dev-server --inline --hot"
+		},
+		"author": "",
+		"license": "ISC",
+		"dependencies": {
+			"@types/node": "^6.0.54",
+			"@types/react": "^0.14.55",
+			"@types/react-dom": "^0.14.19",
+			"@types/react-redux": "^4.4.35",
+			"@types/socket.io-client": "^1.4.29",
+			"@types/whatwg-fetch": "0.0.33",
+			"@types/whatwg-streams": "0.0.2",
+			"install": "^0.8.4",
+			"json-loader": "^0.5.4",
+			"npm": "^4.1.1",
+			"react": "^15.4.1",
+			"react-dom": "^15.4.1",
+			"react-redux": "^5.0.1",
+			"redux": "^3.6.0",
+			"redux-logger": "^2.7.4",
+			"redux-thunk": "^2.1.0",
+			"rxjs": "^5.0.2",
+			"socket.io-client": "^1.7.2",
+			"typescript": "^2.1.4",
+			"webpack": "^1.14.0",
+			"webpack-dev-server": "^1.16.2",
+			"whatwg-fetch": "^2.0.1",
+			"whatwg-streams": "^0.1.1"
+		},
+		"devDependencies": {
+			"babel-core": "^6.21.0",
+			"babel-loader": "^6.2.10",
+			"babel-preset-es2015": "^6.18.0",
+			"source-map-loader": "^0.1.5",
+			"ts-loader": "^1.3.3",
+			"tslint": "^4.2.0"
+		}
+	};
 
 /***/ }
 /******/ ]);
