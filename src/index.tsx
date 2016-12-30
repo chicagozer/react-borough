@@ -7,6 +7,8 @@ import thunk from 'redux-thunk';
 import reduceBoroughs from './reducers';
 import App from './containers/App';
 
+var pjson = require("json-loader!../package.json");
+//console.dir(pjson);
 
 const middleware = [thunk, createLogger()]
 
