@@ -1,24 +1,28 @@
-import * as React from 'react';
-import { Borough } from './borough';
-//import * as Config  from 'config';
-var Config = require('config');
-interface BoroughsProps {
+import * as React from "react";
+import {Borough} from "./borough";
+
+interface IBoroughsProps {
     boroughs: Borough[];
 }
 
-class Boroughs extends React.Component< BoroughsProps, {} > {
+class Boroughs extends React.Component< IBoroughsProps, {} > {
 
-    constructor(props: BoroughsProps) {
+    private config: any;
+
+    constructor(props: IBoroughsProps) {
         super(props);
+        this.config = require("config");
 
     }
 
-    render() {
+    public render() {
 
         return (
             <div>
                 <div className="page-header">
-                    <h1>React Borough List<small>[{Config.version}]</small></h1>
+                    <h1>React Borough List
+                        <small>[{this.config.version}]</small>
+                    </h1>
                 </div>
                 <table className="table table-striped">
                     <thead>
@@ -29,19 +33,20 @@ class Boroughs extends React.Component< BoroughsProps, {} > {
                     </tr>
                     </thead>
                     <tbody>
-
-                        { this.props.boroughs.map(borough =>
+                    {this.props.boroughs.map((borough) =>
+                        (
                             <tr key={borough.name}>
-                                <td> { borough.name } </td>
-                                <td> { borough.valuation } </td>
-                                <td> { borough.count }</td>
+                                <td> {borough.name} </td>
+                                <td> {borough.valuation} </td>
+                                <td> {borough.count}</td>
                             </tr>
-                        )}
-
+                        ),
+                    )}
                     </tbody>
                 </table>
-            </div>)
+            </div>
+        );
     }
 }
 
-export default Boroughs
+export default Boroughs;
