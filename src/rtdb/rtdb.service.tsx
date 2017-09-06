@@ -5,7 +5,7 @@ import {Borough} from "../components/borough";
 export class RtdbService {
 
     private socket: SocketIOClient.Socket;
-    private url: string = "https://rtdb.rheosoft.com";
+    private url: string = "http://rtdb.rheosoft.com";
 
     private boroughs: Observable<Borough[]>;
 
